@@ -1,0 +1,16 @@
+.linkHome {
+    text-decoration: none;
+}
+
+.Hometitle {
+    color: black;
+}
+
+.navClass {
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgb(246, 202, 5);
+}
+
+.classPrice {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
