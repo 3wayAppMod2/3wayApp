@@ -11,3 +11,7 @@ hbs.registerHelper('navActive', (navigationPath, expectedPath, options) => {
 hbs.registerHelper('elpasedTime', (createdAt, options) => {
     return moment(createdAt).fromNow();
 });
+
+hbs.registerHelper('moment', function (date, format) {
+    return moment(date).format(format);
+ });
