@@ -1,5 +1,6 @@
 <div class="container mt-5">
     <h1 class="display-4 mb-4">Resultados de la Búsqueda</h1>
+    {{#if products.length}}
     <ul class="list-group">
         {{#each products}}
             <li class="list-group-item">
@@ -7,11 +8,17 @@
                     <div class="col-md-9">
                         <h2>{{this.title}}</h2>
                         <p>{{this.description}}</p>
-                        <p>Precio: {{this.price}}€</p>
-                        <p>User: {{this.user}}</p>
+                        <p>User: {{this.user.username}} </p>
+                        <img src="{{this.image}}" class="card-img-top" alt="{{this.title}}">                            <p>Precio: {{this.price}}€</p>
                     </div>
                 </div>
             </li>
         {{/each}}
     </ul>
+    {{else}}
+        <div class="boxNotFind">
+            <img src="../../img/lupa.png" class="mt-5 lupaSearch" alt="{{this.title}}">
+            <p class="ms-2 mt-2 searchP">No se ha encontrado ningun resultado</p>
+        </div>
+    {{/if}}
 </div>

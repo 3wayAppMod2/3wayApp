@@ -11,7 +11,8 @@
                     <p class="card-text">Fecha de publicacion:{{moment product.createdAt 'DD/MM/YYYY'}}</p>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="card p-2 mt-3 col-12">
+                <p>Añade un comentario</p>
                 <form action="/products/{{product._id}}/messages" method="post">
                     <div class="mb-3">
                         <label for="title" class="form-label">Título</label>
