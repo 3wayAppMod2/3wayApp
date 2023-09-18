@@ -43,20 +43,18 @@ module.exports.detail = async (req, res, next) => {
     const productId = req.params.productId;
 
     try {
-        // Recupera el producto con el ID especificado
         const product = await Product.findById(productId).populate('user', 'username');
         const messages = await Message.find({ product: productId });
 
         if (!product) {
-            // Si no se encuentra el producto, puedes redirigir a una página de error o hacer algo más.
+            
             return res.status(404).send('Producto no encontrado');
         }
 
-        // Renderiza la vista de la página de producto con los datos del producto
+        
         res.render('products/productPage', { product, messages });
     } catch (error) {
         console.error(error);
-        // Maneja los errores apropiadamente
         res.status(500).send('Error interno del servidor');
     }
 }

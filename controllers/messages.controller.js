@@ -2,12 +2,11 @@ const Message = require('../models/message.model');
 const mongoose = require('mongoose');
 
 module.exports.doMessage = (req, res, next) => {
-    const { title, description } = req.body;
+    const { description } = req.body;
     const productId = req.params.id;
     
 
     Message.create({
-        title,
         description,
         user: req.user.id,
         product: productId

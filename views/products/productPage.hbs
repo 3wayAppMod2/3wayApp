@@ -12,25 +12,19 @@
                 </div>
             </div>
             <div class="card p-2 mt-3 col-12">
-                <p>Añade un comentario</p>
                 <form action="/products/{{product._id}}/messages" method="post">
                     <div class="mb-3">
-                        <label for="title" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="title" name="title">
+                        <textarea class="form-control" id="description" name="description" placeholder="Añade un comentario" rows="1"></textarea>
                     </div>
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Descripción</label>
-                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-                    </div>
-                    <div class="mb-3">
+                    <div class="mb-3 d-flex">
                         <button class="btn btn-warning" type="submit">Escribir mensaje</button>
                 </form>
             </div>
-            {{#each messages}}
-            <div class="card mt-3">
+            {{#each messages }}
+            <div class="card m-3">
                 <div class="card-body">
-                    <img class="rounded-circle" src="{{user.avatarUrl}}" alt="{{user.username}}" width="25" />
-                    <h2 class="card-title">{{this.title}}</h2>
+                    <img class="rounded-circle" src="{{this.user.avatarUrl}}" alt="{{this.user.username}}" width="25" />
+                    <a class="list-group-item">@{{this.user.username}}</a>
                     <p class="card-text">{{this.description}}</p>
                 </div>
             </div>
